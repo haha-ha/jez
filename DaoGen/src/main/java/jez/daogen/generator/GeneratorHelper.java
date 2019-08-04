@@ -28,7 +28,7 @@ public class GeneratorHelper {
     public static String getSetParameterTypeName(int sqlType) {
         String name = getFieldType(sqlType);
         name = name.replace("java.sql.", "").replace("java.math.", "");
-        if (name.equals("Integer")) {
+        if ("Integer".equals(name)) {
             name = "Int";
         }
         return name;

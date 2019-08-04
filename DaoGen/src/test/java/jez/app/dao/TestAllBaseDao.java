@@ -15,10 +15,10 @@ public class TestAllBaseDao implements RowMapper<TestAllData> {
 	@Override
 	public TestAllData mapRow(ResultSet rs, int rowNum) throws SQLException {
 		TestAllData data = new TestAllData();
-		data.setId(rs.getInt("id"));
+		data.setId((Integer)rs.getObject("id"));
 		data.setName(rs.getString("name"));
 		data.setDescription(rs.getString("description"));
-		data.setAge(rs.getInt("age"));
+		data.setAge((Integer)rs.getObject("age"));
 		data.setDob(rs.getTimestamp("dob"));
 		data.setIncome(rs.getBigDecimal("income"));
 		data.setHistory(rs.getString("history"));

@@ -139,10 +139,18 @@ public class Generator {
         sb.append(String.format("\tpublic %sData mapRow(ResultSet rs, int rowNum) throws SQLException {\n", className));
         sb.append(String.format("\t\t%sData data = new %sData();\n", className, className));
         for (ColInfo info: colInfoList) {
-            sb.append(String.format("\t\tdata.set%s(rs.get%s(\"%s\"));\n",
-                    GeneratorHelper.getClassName(info.getDbName()),
-                    GeneratorHelper.getSetParameterTypeName(info.getDbType()),
-                    info.getDbName()));
+            String typeName = GeneratorHelper.getSetParameterTypeName(info.getDbType());
+            if ("Int".equals(typeName)) {
+                sb.append(String.format("\t\tdata.set%s((Integer)rs.getObject(\"%s\"));\n",
+                        GeneratorHelper.getClassName(info.getDbName()),
+                        info.getDbName()));
+            }
+            else {
+                sb.append(String.format("\t\tdata.set%s(rs.get%s(\"%s\"));\n",
+                        GeneratorHelper.getClassName(info.getDbName()),
+                        typeName,
+                        info.getDbName()));
+            }
         }
         sb.append("\t\treturn data;\n");
         sb.append("\t}\n\n");
