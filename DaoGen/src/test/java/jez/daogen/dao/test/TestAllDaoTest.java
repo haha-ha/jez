@@ -51,7 +51,7 @@ public class TestAllDaoTest {
         TestAllDao dao = new TestAllDao();
         dao.delete(jdbcTemplate, "where name like ?", "test_%");
         List<TestAllData> dataList = new ArrayList<>();
-        for (int i = 1000; i < 2000; i ++) {
+        for (int i = 10000; i < 100000; i ++) {
             TestAllData data = new TestAllData();
             data.setId(i);
             data.setName("test_" + i);
