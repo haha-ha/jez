@@ -7,7 +7,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Scope;
-import org.springframework.jdbc.datasource.SingleConnectionDataSource;
 
 import javax.sql.DataSource;
 
@@ -19,6 +18,6 @@ public class AppContext {
     @Primary
     @Scope("prototype")
     public DataSource daoDataSource() {
-        return DataSourceBuilder.create().type(SingleConnectionDataSource.class).build();
+        return DataSourceBuilder.create()./*type(SingleConnectionDataSource.class).*/build();
     }
 }
