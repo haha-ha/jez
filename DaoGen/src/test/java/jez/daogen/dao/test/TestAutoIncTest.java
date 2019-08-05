@@ -34,7 +34,7 @@ public class TestAutoIncTest {
         data.setName("test_name");
         data.setDescription("test_description");
         List<Integer> lst = new ArrayList<>();
-        for (int i = 0; i < 1000; i ++){
+        for (int i = 0; i < 100; i ++){
             lst.add(i);
         }
         lst.parallelStream().forEach( idx -> {

@@ -2,6 +2,7 @@ package jez.app.dao;
 
 import org.springframework.jdbc.core.BatchPreparedStatementSetter;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.PreparedStatement;
@@ -10,6 +11,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import java.util.HashMap;
+
+import java.util.Map;
 
 public class SeqIdBaseDao implements RowMapper<SeqIdData> {
 	@Override
@@ -32,6 +37,16 @@ public class SeqIdBaseDao implements RowMapper<SeqIdData> {
 
 	public int insert(JdbcTemplate jdbcTemplate, SeqIdData data) {
 		return jdbcTemplate.update("insert into SeqId (name, next_val) values (?, ?)", data.getName(), data.getNextVal());
+	}
+
+	public Number insertAndReturnId(SimpleJdbcInsert simpleJdbcInsert, SeqIdData data) {
+		Map<String, Object> parameters = new HashMap<>();
+		parameters.put("name", data.getName());
+		parameters.put("next_val", data.getNextVal());
+		return simpleJdbcInsert.withTableName("SeqId")
+			.usingGeneratedKeyColumns("id")
+			.usingColumns("name", "next_val")
+			.executeAndReturnKey(parameters);
 	}
 
 	public int[] insertBatch(JdbcTemplate jdbcTemplate, List<SeqIdData> listData) {

@@ -124,6 +124,7 @@ public class Generator {
         sb.append(String.format("package %s;\n\n", packageName));
         sb.append("import org.springframework.jdbc.core.BatchPreparedStatementSetter;\n");
         sb.append("import org.springframework.jdbc.core.JdbcTemplate;\n");
+        sb.append("import org.springframework.jdbc.core.simple.SimpleJdbcInsert;\n");
         sb.append("import org.springframework.jdbc.core.RowMapper;\n\n");
         sb.append("import java.sql.PreparedStatement;\n");
         sb.append("import java.sql.ResultSet;\n");
@@ -131,6 +132,8 @@ public class Generator {
         sb.append("import java.util.ArrayList;\n");
         sb.append("import java.util.Arrays;\n");
         sb.append("import java.util.List;\n\n");
+        sb.append("import java.util.HashMap;\n\n");
+        sb.append("import java.util.Map;\n\n");
 
         sb.append(String.format("public class %sBaseDao implements RowMapper<%sData> {\n", className, className));
 
@@ -185,6 +188,27 @@ public class Generator {
         }
         sb.append(String.format("\t\treturn jdbcTemplate.update(\"insert into %s (%s) values (%s)\", %s);\n"
                     , table, sbCols.toString(), sbValuls.toString(), sbParams.toString()));
+        sb.append("\t}\n\n");
+
+        // insert and return key
+        sb.append(String.format("\tpublic Number insertAndReturnId(SimpleJdbcInsert simpleJdbcInsert, %sData data) {\n", className));
+        sb.append("\t\tMap<String, Object> parameters = new HashMap<>();\n");
+        StringBuilder sbInsertKeyCols = new StringBuilder();
+        for (int i = 0; i < colInfoList.size(); i ++) {
+            ColInfo info = colInfoList.get(i);
+            if (!"id".equalsIgnoreCase(info.getDbName())){
+                if (sbInsertKeyCols.length() > 0) {
+                    sbInsertKeyCols.append(", ");
+                }
+                sb.append(String.format("\t\tparameters.put(\"%s\", data.get%s());\n", info.getDbName(),
+                        GeneratorHelper.getClassName(info.getDbName())));
+                sbInsertKeyCols.append(String.format("\"%s\"", info.getDbName()));
+            }
+        }
+        sb.append(String.format("\t\treturn simpleJdbcInsert.withTableName(\"%s\")\n", table));
+        sb.append("\t\t\t.usingGeneratedKeyColumns(\"id\")\n");
+        sb.append(String.format("\t\t\t.usingColumns(%s)\n", sbInsertKeyCols.toString()));
+        sb.append("\t\t\t.executeAndReturnKey(parameters);\n");
         sb.append("\t}\n\n");
 
         // insertBatch function

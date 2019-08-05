@@ -2,6 +2,7 @@ package jez.app.dao;
 
 import org.springframework.jdbc.core.BatchPreparedStatementSetter;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.PreparedStatement;
@@ -10,6 +11,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import java.util.HashMap;
+
+import java.util.Map;
 
 public class TestAutoIncBaseDao implements RowMapper<TestAutoIncData> {
 	@Override
@@ -33,6 +38,16 @@ public class TestAutoIncBaseDao implements RowMapper<TestAutoIncData> {
 
 	public int insert(JdbcTemplate jdbcTemplate, TestAutoIncData data) {
 		return jdbcTemplate.update("insert into TestAutoInc (id, name, description) values (?, ?, ?)", data.getId(), data.getName(), data.getDescription());
+	}
+
+	public Number insertAndReturnId(SimpleJdbcInsert simpleJdbcInsert, TestAutoIncData data) {
+		Map<String, Object> parameters = new HashMap<>();
+		parameters.put("name", data.getName());
+		parameters.put("description", data.getDescription());
+		return simpleJdbcInsert.withTableName("TestAutoInc")
+			.usingGeneratedKeyColumns("id")
+			.usingColumns("name", "description")
+			.executeAndReturnKey(parameters);
 	}
 
 	public int[] insertBatch(JdbcTemplate jdbcTemplate, List<TestAutoIncData> listData) {

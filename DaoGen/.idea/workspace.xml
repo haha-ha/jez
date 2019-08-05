@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d7023dcf-cbff-4066-bc96-e687b7e2ca7d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jez/daogen/AppContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jez/daogen/AppContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jez/daogen/generator/Generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jez/daogen/generator/Generator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/jez/app/dao/SeqIdBaseDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/jez/app/dao/SeqIdBaseDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/jez/app/dao/TestAllBaseDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/jez/app/dao/TestAllBaseDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/jez/app/dao/TestAutoIncBaseDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/jez/app/dao/TestAutoIncBaseDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/jez/app/dao/TestAutoIncDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/jez/app/dao/TestAutoIncDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/jez/daogen/dao/test/TestAutoIncTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/jez/daogen/dao/test/TestAutoIncTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -21,82 +24,66 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5888678">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/test/java/jez/app/dao/TestAutoIncDao.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="399">
-                  <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/test/java/jez/daogen/dao/test/TestAutoIncTest.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="202">
-                  <caret line="22" column="30" lean-forward="true" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-jdbc/5.1.8.RELEASE/spring-jdbc-5.1.8.RELEASE-sources.jar!/org/springframework/jdbc/core/simple/AbstractJdbcInsert.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="153">
-                  <caret line="123" column="8" selection-start-line="123" selection-start-column="8" selection-end-line="123" selection-end-column="8" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-jdbc/5.1.8.RELEASE/spring-jdbc-5.1.8.RELEASE-sources.jar!/org/springframework/jdbc/core/simple/SimpleJdbcInsert.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="153">
-                  <caret line="73" column="8" selection-start-line="73" selection-start-column="8" selection-end-line="73" selection-end-column="8" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/jez/daogen/generator/Generator.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="741">
-                  <caret line="142" column="20" selection-start-line="142" selection-start-column="20" selection-end-line="142" selection-end-column="20" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/test/java/jez/app/dao/TestAutoIncDao.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="147">
-                  <caret line="7" column="37" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/jez/app/dao/TestAutoIncDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="15" column="49" lean-forward="true" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/jez/daogen/dao/test/TestAutoIncTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="36" column="31" selection-start-line="36" selection-start-column="31" selection-end-line="36" selection-end-column="31" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/jez/daogen/generator/Generator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="202">
+              <caret line="202" column="84" selection-start-line="202" selection-start-column="84" selection-end-line="202" selection-end-column="84" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/jez/app/dao/SeqIdBaseDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="430">
+              <caret line="47" column="13" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/jez/app/dao/TestAllBaseDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="84">
+              <caret line="18" column="49" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
+              <folding>
+                <element signature="e#3527#3528#0" expanded="true" />
+                <element signature="e#3558#3559#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -134,21 +121,21 @@
         <option value="$PROJECT_DIR$/src/main/java/jez/daogen/generator/ColInfo.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/test/java/jez/app/dao/TestAllDao.java" />
-        <option value="$PROJECT_DIR$/src/test/java/jez/app/dao/SeqIdBaseDao.java" />
         <option value="$PROJECT_DIR$/src/test/java/jez/daogen/dao/SeqIdBaseDao.java" />
         <option value="$PROJECT_DIR$/src/test/java/jez/daogen/generator/GeneratorHelperTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/jez/daogen/dao/SeqIdDaoTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/jez/daogen/dao/test/SeqIdDaoTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/jez/daogen/App.java" />
         <option value="$PROJECT_DIR$/src/main/java/jez/daogen/generator/GeneratorHelper.java" />
-        <option value="$PROJECT_DIR$/src/test/java/jez/app/dao/TestAllBaseDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/jez/daogen/generator/Generator.java" />
         <option value="$PROJECT_DIR$/src/test/java/jez/daogen/dao/test/TestAllDaoTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/jez/daogen/AppContext.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/test/java/jez/app/dao/TestAutoIncBaseDao.java" />
-        <option value="$PROJECT_DIR$/src/test/java/jez/daogen/dao/test/TestAutoIncTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/jez/app/dao/SeqIdBaseDao.java" />
+        <option value="$PROJECT_DIR$/src/test/java/jez/app/dao/TestAllBaseDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jez/daogen/generator/Generator.java" />
         <option value="$PROJECT_DIR$/src/test/java/jez/app/dao/TestAutoIncDao.java" />
+        <option value="$PROJECT_DIR$/src/test/java/jez/daogen/dao/test/TestAutoIncTest.java" />
       </list>
     </option>
   </component>
@@ -234,16 +221,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="daogen" type="462c0819:PsiDirectoryNode" />
-              <item name="generator" type="462c0819:PsiDirectoryNode" />
-              <item name="Generator" type="1a9f42e2:ClassTreeNode" />
-            </path>
-            <path>
-              <item name="DaoGen" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DaoGen" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="daogen" type="462c0819:PsiDirectoryNode" />
               <item name="App" type="1a9f42e2:ClassTreeNode" />
             </path>
             <path>
@@ -310,29 +287,6 @@
               <item name="jez" type="462c0819:PsiDirectoryNode" />
               <item name="daogen" type="462c0819:PsiDirectoryNode" />
               <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DaoGen" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DaoGen" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="jez" type="462c0819:PsiDirectoryNode" />
-              <item name="daogen" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DaoGen" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DaoGen" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="jez" type="462c0819:PsiDirectoryNode" />
-              <item name="daogen" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="TestAllDaoTest" type="1a9f42e2:ClassTreeNode" />
             </path>
           </expand>
           <select />
@@ -498,18 +452,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestAllDaoTest_testInsertBatch - 2019.08.04 at 09h 09m 52s.xml">
-      <configuration name="TestAllDaoTest.testInsertBatch" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestAllDaoTest_testInsertBatch - 2019.08.04 at 09h 10m 12s.xml">
-      <configuration name="TestAllDaoTest.testInsertBatch" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestAllDaoTest - 2019.08.04 at 09h 11m 02s.xml">
-      <configuration name="TestAllDaoTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestAllDaoTest_testInsertBatch - 2019.08.04 at 09h 11m 29s.xml">
-      <configuration name="TestAllDaoTest.testInsertBatch" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="TestAutoIncTest_testAutoInc - 2019.08.05 at 09h 15m 39s.xml">
       <configuration name="TestAutoIncTest.testAutoInc" configurationId="JUnit" />
     </history-entry>
@@ -528,6 +470,18 @@
     <history-entry file="TestAutoIncTest_testAutoInc - 2019.08.05 at 09h 22m 57s.xml">
       <configuration name="TestAutoIncTest.testAutoInc" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="TestAutoIncTest_testAutoInc - 2019.08.05 at 09h 26m 11s.xml">
+      <configuration name="TestAutoIncTest.testAutoInc" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestAutoIncTest_testAutoInc - 2019.08.05 at 09h 27m 17s.xml">
+      <configuration name="TestAutoIncTest.testAutoInc" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestAutoIncTest_testAutoInc - 2019.08.05 at 11h 14m 52s.xml">
+      <configuration name="TestAutoIncTest.testAutoInc" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestAutoIncTest_testAutoInc - 2019.08.05 at 11h 15m 18s.xml">
+      <configuration name="TestAutoIncTest.testAutoInc" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -542,7 +496,7 @@
     <frame x="-6" y="-6" width="1933" height="1053" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15045674" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21816228" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -552,7 +506,7 @@
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.23188406" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3556299" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.40022296" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4503902" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -783,19 +737,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/jez/app/dao/SeqIdBaseDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="436">
-          <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
-          <folding>
-            <element signature="e#2015#2016#0" expanded="true" />
-            <element signature="e#2046#2047#0" expanded="true" />
-            <element signature="e#2278#2279#0" expanded="true" />
-            <element signature="e#2307#2308#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/jez/app/dao/TestAllDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
@@ -893,28 +834,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/jez/app/dao/TestAllBaseDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="785">
-          <caret line="76" column="17" selection-start-line="76" selection-start-column="17" selection-end-line="76" selection-end-column="17" />
-          <folding>
-            <element signature="e#2809#2810#0" expanded="true" />
-            <element signature="e#2840#2841#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
           <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/jez/app/dao/TestAutoIncBaseDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="34" column="82" selection-start-line="34" selection-start-column="65" selection-end-line="34" selection-end-column="82" />
         </state>
       </provider>
     </entry>
@@ -942,10 +865,49 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/jez/app/dao/SeqIdBaseDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="47" column="13" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/jez/app/dao/TestAllBaseDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="18" column="49" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
+          <folding>
+            <element signature="e#3527#3528#0" expanded="true" />
+            <element signature="e#3558#3559#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/jez/daogen/generator/Generator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="741">
-          <caret line="142" column="20" selection-start-line="142" selection-start-column="20" selection-end-line="142" selection-end-column="20" />
+        <state relative-caret-position="202">
+          <caret line="202" column="84" selection-start-line="202" selection-start-column="84" selection-end-line="202" selection-end-column="84" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/jez/app/dao/TestAutoIncBaseDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="49" column="45" lean-forward="true" selection-start-line="49" selection-start-column="45" selection-end-line="49" selection-end-column="45" />
+          <folding>
+            <element signature="e#2941#2942#0" expanded="true" />
+            <element signature="e#2972#2973#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/jez/app/dao/TestAutoIncDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="15" column="49" lean-forward="true" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -954,18 +916,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/jez/daogen/dao/test/TestAutoIncTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="22" column="30" lean-forward="true" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/jez/app/dao/TestAutoIncDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" column="37" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
+        <state relative-caret-position="228">
+          <caret line="36" column="31" selection-start-line="36" selection-start-column="31" selection-end-line="36" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

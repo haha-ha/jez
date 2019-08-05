@@ -2,6 +2,7 @@ package jez.app.dao;
 
 import org.springframework.jdbc.core.BatchPreparedStatementSetter;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.PreparedStatement;
@@ -10,6 +11,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import java.util.HashMap;
+
+import java.util.Map;
 
 public class TestAllBaseDao implements RowMapper<TestAllData> {
 	@Override
@@ -37,6 +42,20 @@ public class TestAllBaseDao implements RowMapper<TestAllData> {
 
 	public int insert(JdbcTemplate jdbcTemplate, TestAllData data) {
 		return jdbcTemplate.update("insert into TestAll (id, name, description, age, dob, income, history) values (?, ?, ?, ?, ?, ?, ?)", data.getId(), data.getName(), data.getDescription(), data.getAge(), data.getDob(), data.getIncome(), data.getHistory());
+	}
+
+	public Number insertAndReturnId(SimpleJdbcInsert simpleJdbcInsert, TestAllData data) {
+		Map<String, Object> parameters = new HashMap<>();
+		parameters.put("name", data.getName());
+		parameters.put("description", data.getDescription());
+		parameters.put("age", data.getAge());
+		parameters.put("dob", data.getDob());
+		parameters.put("income", data.getIncome());
+		parameters.put("history", data.getHistory());
+		return simpleJdbcInsert.withTableName("TestAll")
+			.usingGeneratedKeyColumns("id")
+			.usingColumns("name", "description", "age", "dob", "income", "history")
+			.executeAndReturnKey(parameters);
 	}
 
 	public int[] insertBatch(JdbcTemplate jdbcTemplate, List<TestAllData> listData) {

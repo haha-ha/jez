@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class TestAutoIncDao extends TestAutoIncBaseDao {
-    public Number insertAndReturnId(SimpleJdbcInsert simpleJdbcInsert, TestAutoIncData data) {
+    public Number insertAndReturnIdX(SimpleJdbcInsert simpleJdbcInsert, TestAutoIncData data) {
         Map<String, Object> parameters = new HashMap<>();
         parameters.put("name", data.getName());
         parameters.put("description", data.getDescription());
@@ -14,6 +14,5 @@ public class TestAutoIncDao extends TestAutoIncBaseDao {
                 .usingGeneratedKeyColumns("id")
                 .usingColumns("name", "description")
                 .executeAndReturnKey(parameters);
-
     }
 }
